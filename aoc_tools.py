@@ -37,8 +37,15 @@ def read_input_to_list_of_grids(in_file):
 
 def read_input_to_nums(in_file):  # use this if there are charactes in the input which need to be filtered out
     f = open(in_file)
+    nums = [re.findall(r'\d+', line) for line in f]
+    result = [[int(n) for n in num] for num in nums]  # covert to numbers
+    f.close()
+    return result
+
+def read_input_to_nums_neg(in_file):  # use this if there are charactes in the input which need to be filtered out
+    f = open(in_file)
     nums = [re.findall(r'-*\d+', line) for line in f]  # include negative numbers
-    result = [[int(n) for n in num] for num in nums]
+    result = [[int(n) for n in num] for num in nums]  # covert to numbers
     f.close()
     return result
 
@@ -132,5 +139,5 @@ if __name__ == '__main__':
 
     # print(read_text_to_nums(section[0]))
 
-    nums = read_input_to_nums1('input.txt')
+    nums = read_input_to_nums('input.txt')
     print(nums)
