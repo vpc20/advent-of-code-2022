@@ -7,9 +7,8 @@ if __name__ == '__main__':
 
     overlap_count = 0
     for e in nums:
-        if (e[0] >= e[2] and e[1] <= e[3]) or (e[2] >= e[0] and e[3] <= e[1]):
+        if e[0] in range(e[2], e[3] + 1) or e[1] in range(e[2], e[3] + 1) or e[2] in range(e[0], e[1] + 1) or e[3] in range(e[0], e[1] + 1):
             overlap_count += 1
             print(e)
 
 print(overlap_count)
-
