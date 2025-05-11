@@ -51,3 +51,6 @@ if __name__ == '__main__':
 
     result = ''.join([e[-1] for e in stacks])  # get crates on top of stack
     print(result)
+
+    for e in stacks:
+        print(e)
